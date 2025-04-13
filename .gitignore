@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Prevent non-pnpm lock files
+yarn.lock
+package-lock.json
+node_modules/.yarn-integrity
