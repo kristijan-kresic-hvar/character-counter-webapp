@@ -1,0 +1,20 @@
+.large {
+  width: 346px;
+  height: 40px;
+}
+
+.medium {
+  width: 246px;
+  height: 40px;
+}
+
+.small {
+  width: 146px;
+  height: 40px;
+}
+
+.large,
+.medium,
+.small {
+  display: inline-block;
+}

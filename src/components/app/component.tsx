@@ -1,8 +1,9 @@
-import styles from './style.module.css';
 import { FC } from 'react';
+// components
+import { PageLayout } from '../page-layout';
 
 const AppComponent: FC = () => {
-  return <div className={styles.container}>Hello character counter</div>;
+  return <PageLayout />;
 };
 
 export default AppComponent;
