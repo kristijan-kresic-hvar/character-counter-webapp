@@ -28,6 +28,24 @@
   font-display: swap;
 }
 
+:root {
+  --color-neutral-900: #12131a;
+  --color-neutral-800: #21222c;
+  --color-neutral-700: #2a2b37;
+  --color-neutral-600: #404254;
+  --color-neutral-200: #e4e4ef;
+  --color-neutral-100: #f2f2f7;
+  --color-neutral-0: #ffffff;
+}
+
+:root[data-theme='light'] {
+  --theme-toggle-background: var(--color-neutral-100);
+}
+
+:root[data-theme='dark'] {
+  --theme-toggle-background: var(--color-neutral-700);
+}
+
 * {
   margin: 0;
   padding: 0;
