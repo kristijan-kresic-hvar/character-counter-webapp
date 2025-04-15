@@ -1,17 +1,18 @@
 import { FC } from 'react';
 // namespaces
-import { LogoSizes, LogoVariants } from './component.namespace.ts';
+import { LogoSizes } from './component.namespace.ts';
 // styles
 import styles from './styles.module.css';
+import { ThemeVariants } from '../../namespace.ts';
 
 interface Props {
-  variant?: LogoVariants;
+  variant?: ThemeVariants;
   size?: LogoSizes;
   alt?: string;
 }
 
 const LogoComponent: FC<Props> = ({
-  variant = LogoVariants.LIGHT,
+  variant = ThemeVariants.LIGHT,
   size = LogoSizes.MEDIUM,
   alt = 'logo',
 }) => {

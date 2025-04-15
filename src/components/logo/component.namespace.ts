@@ -3,8 +3,3 @@ export enum LogoSizes {
   MEDIUM = 'medium',
   LARGE = 'large',
 }
-
-export enum LogoVariants {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
