@@ -1,0 +1,20 @@
+.themeToggle {
+  width: 44px;
+  height: 44px;
+  aspect-ratio: 44 / 44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--theme-toggle-background);
+}
+
+@media (max-width: 375px) {
+  .themeToggle {
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 32 / 32;
+  }
+}

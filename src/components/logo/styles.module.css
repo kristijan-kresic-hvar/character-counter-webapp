@@ -1,0 +1,33 @@
+.large {
+  width: 346px;
+  height: 40px;
+  aspect-ratio: 346 / 40;
+}
+
+.medium {
+  width: 246px;
+  height: 40px;
+  aspect-ratio: 246 / 40;
+}
+
+.small {
+  width: 184px;
+  height: 30px;
+  aspect-ratio: 184 / 30;
+}
+
+.large,
+.medium,
+.small {
+  display: inline-block;
+}
+
+@media (max-width: 375px) {
+  .large,
+  .medium,
+  .small {
+    width: 184px;
+    height: 30px;
+    aspect-ratio: 184 / 30;
+  }
+}
