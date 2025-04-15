@@ -21,7 +21,7 @@ const ThemeContext = createContext<ThemeContextType>({
 
 const ThemeProvider: FC<Props> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeVariants>(defaultTheme);
-  const setTheme = (newTheme: ThemeVariants) => {
+  const setTheme = (newTheme: ThemeVariants): void => {
     setCurrentTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
   };
