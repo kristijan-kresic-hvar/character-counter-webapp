@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useMemo } from 'react';
+import { ChangeEvent, useState, useMemo, useCallback } from 'react';
 // Utils
 import { isExceedingLimit } from './utils.ts';
 import { onlyNumbers } from '../../lib/utils.ts';
@@ -25,12 +25,15 @@ export const useCharacterCounterState = () => {
     return '';
   }, [isExcludeSpacesActive, isLimitActive, limit, text]);
 
-  const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const text = e.target.value;
-    setText(text);
-  };
+  const handleTextChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      const text = e.target.value;
+      setText(text);
+    },
+    [],
+  );
 
-  const handleLimitChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleLimitChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const limit = e.target.value;
     const newLimit = onlyNumbers(limit);
 
@@ -40,14 +43,17 @@ export const useCharacterCounterState = () => {
     }
 
     setLimit(newLimit.toString());
-  };
+  }, []);
 
-  const handleToggleExcludeSpaces = (e: ChangeEvent<HTMLInputElement>) => {
-    const isChecked = e.target.checked;
-    setIsExcludeSpacesActive(isChecked);
-  };
+  const handleToggleExcludeSpaces = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const isChecked = e.target.checked;
+      setIsExcludeSpacesActive(isChecked);
+    },
+    [],
+  );
 
-  const handleToggleLimit = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleToggleLimit = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
 
     if (!isChecked) {
@@ -55,7 +61,7 @@ export const useCharacterCounterState = () => {
     }
 
     setIsLimitActive(isChecked);
-  };
+  }, []);
 
   return {
     text,
