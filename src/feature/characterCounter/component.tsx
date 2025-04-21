@@ -3,7 +3,7 @@ import { ChangeEvent, FC, useState } from 'react';
 import { TextArea } from '../../components/textarea';
 import { ReadingTime } from './components/readingTime';
 import { Checkbox } from '../../components/checkbox';
-import { TextInput } from '../../components/textInput';
+import { Limit } from './components/limit';
 // Utils
 import { onlyNumbers } from '../../lib/utils.ts';
 import { isExceedingLimit } from './utils.ts';
@@ -13,6 +13,7 @@ import { LIMIT_ERROR } from '../../lib/constants.ts';
 import styles from './styles.module.css';
 
 const CharacterCounterComponent: FC = () => {
+  // state
   const [text, setText] = useState<string>('');
   const [limit, setLimit] = useState<string>('');
   const [error, setError] = useState<string>('');
@@ -95,21 +96,12 @@ const CharacterCounterComponent: FC = () => {
             label={'Exclude Spaces'}
             onChange={handleToggleExcludeSpaces}
           />
-          <div className={styles.limitOptions}>
-            <Checkbox
-              label={'Set Character Limit'}
-              onChange={handleToggleLimit}
-            />
-            {isLimitActive && (
-              <div className={styles.limitInputWrapper}>
-                <TextInput
-                  value={limit}
-                  placeholder={'Limit'}
-                  onChange={handleLimitChange}
-                />
-              </div>
-            )}
-          </div>
+          <Limit
+            limit={limit}
+            onLimitChange={handleLimitChange}
+            isLimitActive={isLimitActive}
+            onToggleLimit={handleToggleLimit}
+          />
         </div>
         <ReadingTime text={text} />
       </div>

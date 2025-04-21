@@ -42,19 +42,3 @@
     gap: 12px;
   }
 }
-
-.limitOptions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-}
-
-.limitInputWrapper {
-  max-width: 60px;
-}
