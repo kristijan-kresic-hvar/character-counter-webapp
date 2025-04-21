@@ -14,11 +14,11 @@ const CharacterCounterComponent = () => {
     text,
     handleTextChange,
     limit,
+    isLimitActive,
     handleLimitChange,
     handleToggleLimit,
     error,
     handleToggleExcludeSpaces,
-    isLimitActive,
   } = useCharacterCounterState();
 
   return (
