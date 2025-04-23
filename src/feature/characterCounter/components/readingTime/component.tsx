@@ -1,17 +1,15 @@
 import { FC } from 'react';
-import { calculateReadingTime } from '../../utils.ts';
 import styles from './styles.module.css';
 
 interface Props {
-  text: string;
+  time: string | number;
 }
 
-const ReadingTimeComponent: FC<Props> = ({ text }) => {
-  const readingTime = calculateReadingTime(text);
+const ReadingTimeComponent: FC<Props> = ({ time }) => {
   return (
     <p className={styles.text}>
-      Approx. reading time: {readingTime ? '<' : null}
-      {readingTime} minute
+      Approx. reading time: {time ? '<' : null}
+      {time} minute
     </p>
   );
 };

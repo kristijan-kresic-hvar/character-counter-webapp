@@ -1,6 +1,6 @@
 import { ChangeEvent, useState, useMemo, useCallback } from 'react';
 // Utils
-import { isExceedingLimit } from './utils.ts';
+import { isExceedingLimit } from './utils/isExceedingLimit.ts';
 import { onlyNumbers } from '../../lib/utils.ts';
 // Constants
 import { LIMIT_ERROR } from '../../lib/constants.ts';
